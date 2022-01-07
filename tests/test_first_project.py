@@ -1,9 +1,14 @@
-# Define the function to be tested
-def avg(*list_numbers):
-    total = 0
-    for num in list_numbers:
-        total += num 
+# Import classes, libraries and functions
+import unittest
+from first_project import avg 
 
-    return total/len(list_numbers)
+class EasyTestCase(unittest.TestCase):
 
-print(avg(1,2,3,4,5))
+    def test_easy_input(self):
+        self.assertEqual(avg(1,2,3), 2)
+
+    def test_easy_input_two(self):
+        self.assertEqual(avg(10, 10, 10, 10), 10)
+
+if __name__ == "__main__":
+    unittest.main()

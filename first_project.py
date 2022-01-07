@@ -1,1 +1,0 @@
-print("Mo is the best teacher in the world")

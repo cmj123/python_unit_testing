@@ -1,9 +1,12 @@
 # Define the function to be tested
-def avg(*list_numbers):
+def avg(*list_numbers:float) -> float:
     total = 0
     for num in list_numbers:
-        total += num 
+        if isinstance(num, (int, float)):
+            total += num 
+        else:
+            raise TypeError("Wrong input data. Please make sure that everything is a number")
 
     return total/len(list_numbers)
 
-print(avg(1,2,3,4,5))
+# print(avg(1,2,3,4,5,"hi"))
